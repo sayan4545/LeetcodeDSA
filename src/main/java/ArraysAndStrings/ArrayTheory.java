@@ -1,5 +1,6 @@
 package ArraysAndStrings;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -58,11 +59,11 @@ public class ArrayTheory {
         int[][] twoDArray1 = new int[3][3];
         // In the RHS , the fierst size denotes the suize opf the rows, the second size denotes size of the columns.
         // To specify the size of the column is not mandatory
-        for (int row =0;row<twoDArray1.length;row++){
-            for(int col =0;col<twoDArray1[row].length;col++){
-                twoDArray1[row][col] = sc.nextInt();
-            }
-        }
+//        for (int row =0;row<twoDArray1.length;row++){
+//            for(int col =0;col<twoDArray1[row].length;col++){
+//                twoDArray1[row][col] = sc.nextInt();
+//            }
+//        }
 //        for(int row =0;row<twoDArray1.length;row++){
 //            for(int col =0;col<twoDArray1[row].length;col++){
 //                System.out.print(twoDArray1[row][col]+" ");
@@ -81,9 +82,67 @@ public class ArrayTheory {
         How many number of rows are stored matters, but the sixe of the individual rows do not matter .
          */
 
+//        int[][] num2 = new int[][]{{1,2,3},{4,5,6,7,8},{1,2}};
+//        for(int[] num : num2){
+//            System.out.println(Arrays.toString(num));
+//        }
+        /*
+        Why column no is not madatory?
+
+         */
+        // Dynamic arrays --> ArrayList. part of collection framework
+//        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+//        for(int i=0;i<3;i++){
+//            list.add(new ArrayList<>());
+//        }
+//        for(int i=0;i<3;i++){
+//            for(int j=0;j<3;j++){
+//                list.get(i).add(sc.nextInt());
+//            }
+//        }
+//        for(int i=0;i<list.size();i++){
+//            for(int j=0;j<list.get(i).size();j++){
+//                System.out.println(list.get(i).get(j));
+//            }
+//            System.out.println();
+//        }
+        //System.out.println(list);
+
+        int [] arr = {1,2,3,4,5,6,6,6};
+        System.out.println(Arrays.toString(arr));
+        //swap(arr,1,2);
+        System.out.println(Arrays.toString(arr));
+        System.out.println("The maximum in the array is : "+ max(arr));
+        reverseArray(arr);
+        System.out.println(Arrays.toString(arr));
+
+
 
     }
     public static void change(int[] num){
         num[0]= 100;
+    }
+    public static void swap(int[] arr, int index1, int index2){
+        int temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+    public static int max(int[] arr){
+        int maximum = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>maximum){
+                maximum = arr[i];
+            }
+        }
+        return maximum;
+    }
+    public static void reverseArray(int[] arr){
+        int start = 0;
+        int end = arr.length-1;
+        while(start<end){
+            swap(arr,start,end);
+            start++;
+            end--;
+        }
     }
 }
