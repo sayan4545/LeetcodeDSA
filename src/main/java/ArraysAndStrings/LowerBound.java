@@ -29,4 +29,6 @@ public class LowerBound {
         }
         return ans;
     }
+    //TC --> O(logn)
+
 }
