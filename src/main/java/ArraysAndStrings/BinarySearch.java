@@ -2,9 +2,7 @@ package ArraysAndStrings;
 // https://leetcode.com/problems/binary-search/description/
 public class BinarySearch {
     public static void main(String[] args) {
-        int [] arr = {1,2,3,4,5,6,7,8};
-        System.out.println(binarySearch(arr,7));
-        System.out.println(binarySearch(arr,10));
+        
     }
     public static int binarySearch(int[] nums , int target){
         int s = 0;
